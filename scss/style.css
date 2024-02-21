@@ -20,10 +20,6 @@ body {
   font-weight: 500;
 }
 
-main {
-  background-color: var(--mainxolor);
-}
-
 a,
 a:hover {
   text-decoration: none;
@@ -34,17 +30,13 @@ a:hover {
   margin: 0 auto;
   padding: 0 20px;
 }
-.wrapper .wrapper {
-  min-height: 100vh;
-  position: relative;
-}
 
 section {
-  margin: 65px 0;
+  padding: 65px 0;
 }
 @media screen and (min-width: 601px) {
   section {
-    margin: 80px 0;
+    padding: 80px 0;
   }
 }
 
@@ -151,17 +143,17 @@ header .burger:hover {
     display: none;
   }
 }
-header span {
+header .burger span {
   display: block;
   width: 70%;
   height: 2px;
   background-color: var(--txtcolor);
   grid-area: 1/1/-1/-1;
 }
-header span:nth-child(2) {
+header .burger span:nth-child(2) {
   translate: 0 -0.5rem;
 }
-header span:nth-child(3) {
+header .burger span:nth-child(3) {
   translate: 0 0.5rem;
 }
 header .menu {
@@ -198,17 +190,17 @@ header .menu ul li {
   padding: 2rem;
   border-top: 1px solid var(--bordercolor);
 }
+@media screen and (min-width: 951px) {
+  header .menu ul li {
+    border-top: none;
+  }
+}
 header .menu ul li:nth-last-child(1) {
   border-bottom: 1px solid var(--bordercolor);
 }
 @media screen and (min-width: 951px) {
   header .menu ul li:nth-last-child(1) {
     border-bottom: none;
-  }
-}
-@media screen and (min-width: 951px) {
-  header .menu ul li {
-    border-top: none;
   }
 }
 header .menu.is-active {
@@ -230,17 +222,17 @@ header .menu.is-active {
 .about {
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
+  margin-top: 65px;
   width: 100vw;
   background-color: var(--maincolor);
-  padding-top: 65px;
   padding-left: 20px;
   padding-right: 20px;
 }
 @media screen and (min-width: 951px) {
   .about {
+    margin-top: 80px;
     padding-left: 200px;
     padding-right: 200px;
-    padding-top: 80px;
   }
 }
 .about .contents {
@@ -278,8 +270,9 @@ header .menu.is-active {
   .about .contents .img1 {
     display: block;
     position: absolute;
-    top: -10vh;
-    left: 10px;
+    top: -8vh;
+    left: 10vw;
+    width: 10%;
   }
 }
 .about .contents .img2 {
@@ -289,8 +282,33 @@ header .menu.is-active {
   .about .contents .img2 {
     display: block;
     position: absolute;
-    top: 20px;
-    left: -5vw;
+    top: 5vh;
+    left: -13vw;
+    width: 10%;
+  }
+}
+.about .contents .img3 {
+  display: none;
+}
+@media screen and (min-width: 951px) {
+  .about .contents .img3 {
+    display: block;
+    position: absolute;
+    top: 20vh;
+    right: -10vw;
+    width: 10%;
+  }
+}
+.about .contents .img4 {
+  display: none;
+}
+@media screen and (min-width: 951px) {
+  .about .contents .img4 {
+    display: block;
+    position: absolute;
+    top: -10vh;
+    right: 13vw;
+    width: 10%;
   }
 }
 
@@ -311,7 +329,7 @@ header .menu.is-active {
 }
 
 .works {
-  margin-top: 0;
+  padding-top: 0;
 }
 .works .grid {
   display: grid;
