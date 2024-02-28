@@ -2,7 +2,7 @@
   <html lang="ja">
     
   <head>
-    <title>cake</title>
+    <title>yuna portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="./favicon.ico">
@@ -10,8 +10,6 @@
     <!-- css -->
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./scss/style.css">
-
-    <script src="https://kit.fontawesome.com/5b87850775.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -34,17 +32,26 @@
           </div>
   
           <!-- ハンバーガーメニュー -->
+          <!-- sp -->
           <button class="burger" id="burger">
             <span></span>
             <span></span>
             <span></span>
           </button>
-          <nav class="menu" id="menu">
+
+          <!-- sp -->
+          <nav class="sp_menu" id="sp_menu">
             <ul>
-              <li>ABOUT</li>
-              <li>WORKS</li>
-              <li>仮</li>
-              <li>仮</li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">WORKS</a></li>
+            </ul>
+          </nav>
+
+          <!-- pc -->
+          <nav class="pc_menu" id="pc_menu">
+            <ul>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">WORKS</a></li>
             </ul>
           </nav>
         </div>
@@ -56,17 +63,6 @@
           <img src="./images/img1.jpg" alt="スライド画像1">
         </div>
       </div>
-      <script>
-        const burger = document.querySelector('#burger');
-        const menu = document.querySelector('#menu');
-
-        if(burger) {
-          burger.addEventListener('click', () =>  {
-            burger.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-          })
-        }
-      </script>
 
     <!------------------ メイン ------------------>
   
@@ -78,12 +74,12 @@
           <h1>ABOUT</h1>
           <div class="contents">
             <div class="my">
-              <p>
-                自己紹介テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキス
-              </p>
               <div class="image">
                 <img src="./images/my.jpg" alt="自分の写真">
               </div>
+              <p>
+                webデザインを勉強しています。
+              </p>
             </div>
 
             <!-- 配置するイラスト -->
@@ -114,7 +110,6 @@
               <div class="img">
                 <img src="./images/skill1.jpg" alt="photoshopに関する画像">
               </div>
-              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
             <div class="box">
               <div class="box_title">
@@ -123,7 +118,6 @@
               <div class="img">
                 <img src="./images/skill2.jpg" alt="HTML&CSSに関する画像">
               </div>
-              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
             <div class="box">
               <div class="box_title">
@@ -132,7 +126,7 @@
               <div class="img">
                 <img src="./images/skill3.jpg" alt="Javascriptに関する画像">
               </div>
-              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p>※現在勉強中です</p>
           </div>
         </div>
       </section>
@@ -145,26 +139,26 @@
 
           <!-- アイテム -->
           <div class="item">
-            <h2>cake1</h2>
-            <img src="./images/img1.jpg" alt="">
+            <h2>仮サイト1</h2>
+            <a href="#"><img src="./images/site1.jpg" alt="仮サイト"></a>
           </div>
 
           <!-- アイテム -->
           <div class="item">
-            <h2>cake1</h2>
-            <img src="./images/img2.jpg" alt="">
+            <h2>仮サイト2</h2>
+            <a href="#"><img src="./images/site1.jpg" alt="仮サイト"></a>
           </div>
 
           <!-- アイテム -->
           <div class="item">
-            <h2>cake1</h2>
-            <img src="./images/img3.jpg" alt="">
+            <h2>仮サイト3</h2>
+            <a href="#"><img src="./images/site1.jpg" alt="仮サイト"></a>
           </div>
 
           <!-- アイテム -->
           <div class="item">
-            <h2>cake1</h2>
-            <img src="./images/img3.jpg" alt="">
+            <h2>仮サイト4</h2>
+            <a href="#"><img src="./images/site1.jpg" alt="仮サイト"></a>
           </div>
         </div>
       </section>
