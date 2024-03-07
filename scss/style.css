@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap");
+@charset "UTF-8";
+/* ------------- カスタムプロパティ---------- */
 :root {
   --bgcolor: #aacec4;
   --maincolor: #90bdb3;
@@ -7,6 +8,8 @@
   --bordercolor: rgba(255, 255, 255, 0.3);
 }
 
+/* ---------------ブレイクポイント--------------- */
+/* ----------------------共通設定-------------- */
 html {
   font-size: 62.5%;
 }
@@ -28,77 +31,94 @@ a:hover {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
 }
 
 section {
-  padding: 65px 0;
+  padding: 3rem 0;
 }
 @media screen and (min-width: 474px) {
   section {
-    padding: 80px 0;
+    padding: 5rem 0;
   }
 }
-
-img {
-  border-radius: 30px;
-}
-
-.logo img {
-  border-radius: 0 !important;
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.6rem;
-  position: relative;
-  padding-bottom: 20px;
-}
 @media screen and (min-width: 700px) {
-  h1 {
-    font-size: 3.4rem;
-    margin-bottom: 20px;
-  }
-}
-h1:before {
-  content: "";
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 2px;
-  width: 4rem;
-  background-color: var(--subcolor);
-}
-@media screen and (min-width: 700px) {
-  h1:before {
-    top: 70px;
+  section {
+    padding: 10rem 0;
   }
 }
 
 h2 {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 2.6rem;
   position: relative;
-  padding-left: 2rem;
-  margin-bottom: 2rem;
-  line-height: 2;
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 700px) {
+  h2 {
+    font-size: 3.4rem;
+    margin-bottom: 3rem;
+  }
 }
 h2:before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 2px;
-  border-radius: 100px;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.5rem;
+  width: 4rem;
   background-color: var(--subcolor);
+}
+@media screen and (min-width: 700px) {
+  h2:before {
+    top: 6rem;
+  }
+}
+
+h3 {
+  color: var(--txtcolor);
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  line-height: 1.3;
+  background: var(--maincolor);
+  vertical-align: middle;
+  border-radius: 2rem;
+}
+h3:before {
+  content: "●";
+  color: white;
 }
 
 p {
   font-size: 1.6rem;
 }
 
+/* ---------------ローディング----------------- */
+#loader_bg {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: var(--bgcolor);
+  text-align: center;
+  color: #fff;
+}
+
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+/* --------------ヘッダー-------------- */
 header {
   position: fixed;
   z-index: 10;
@@ -107,21 +127,26 @@ header {
   width: 100%;
   box-sizing: border-box;
 }
+header.change-color {
+  background-color: rgba(170, 206, 196, 0.9);
+  transition: 0.6s;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+}
 header .contents {
   position: relative;
-  min-height: 60px;
+  min-height: 10rem;
   width: 90%;
   margin: 0 auto;
-  height: 65px;
+  height: 4rem;
   max-width: 1200px;
 }
 @media screen and (min-width: 700px) {
   header .contents {
-    height: 150px;
+    height: 5rem;
   }
 }
 header .logo img {
-  max-width: 80px;
+  max-width: 10rem;
   position: absolute;
   top: 50%;
   left: 0;
@@ -129,48 +154,63 @@ header .logo img {
 }
 @media screen and (min-width: 700px) {
   header .logo img {
-    max-width: 150px;
+    max-width: 13rem;
   }
 }
-header .burger {
+header #burger {
   position: absolute;
-  right: 10px;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
   display: grid;
   place-items: center;
-  width: 44px;
+  width: 4rem;
   aspect-ratio: 1;
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-header .burger:hover {
+header #burger:hover {
   opacity: 0.8;
 }
+header #burger.open span:first-child {
+  display: none;
+}
+header #burger.open span:nth-child(2) {
+  transform: rotate(-135deg);
+  translate: 0;
+  transition: 0.2s;
+}
+header #burger.open span:last-child {
+  transform: rotate(135deg);
+  translate: 0;
+  transition: 0.2s;
+}
 @media screen and (min-width: 700px) {
-  header .burger {
+  header #burger {
     display: none;
   }
 }
-header .burger span {
+header #burger span {
   display: block;
   width: 70%;
-  height: 2px;
+  height: 0.2rem;
   background-color: var(--txtcolor);
   grid-area: 1/1/-1/-1;
+  transition: 0.2s;
 }
-header .burger span:nth-child(2) {
-  translate: 0 -0.5rem;
+header #burger span:nth-child(2) {
+  translate: 0 -1rem;
 }
-header .burger span:nth-child(3) {
-  translate: 0 0.5rem;
+header #burger span:nth-child(3) {
+  translate: 0 1rem;
 }
 header .sp_menu {
   display: none;
   background: rgba(170, 206, 196, 0.9);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
+  height: 100vh;
 }
 @media screen and (min-width: 700px) {
   header .sp_menu {
@@ -202,7 +242,7 @@ header .pc_menu {
 }
 header .pc_menu ul {
   display: flex;
-  gap: 100px;
+  gap: 5rem;
   position: absolute;
   top: 50%;
   right: 0;
@@ -214,34 +254,36 @@ header .pc_menu ul {
   }
 }
 
+/* ----------------MV------------------ */
 .mv {
-  display: flex;
-  justify-content: center;
-  padding-top: 65px;
+  padding-top: 10rem;
   width: 100%;
 }
 @media screen and (min-width: 700px) {
   .mv {
-    padding-top: 150px;
+    padding-top: 10rem;
   }
 }
-.mv .img img {
+.mv .img1 img, .mv .img2 img, .mv .img3 img {
   width: 100%;
   height: 100%;
+  border-radius: 0;
 }
 
+/* -------------- メイン--------------- */
+/* -------------about-------------------- */
 .about {
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
-  margin-top: 65px;
+  margin-top: 3rem;
   width: 100vw;
   background-color: var(--maincolor);
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 700px) {
   .about {
-    margin-top: 80px;
+    margin-top: 6rem;
   }
 }
 .about .contents {
@@ -257,7 +299,7 @@ header .pc_menu ul {
 @media screen and (min-width: 700px) {
   .about .contents .my {
     display: flex;
-    gap: 20px;
+    gap: 5rem;
     align-items: center;
   }
 }
@@ -271,7 +313,7 @@ header .pc_menu ul {
 }
 .about .contents .my p {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 .about .contents .img1 {
   display: none;
@@ -280,7 +322,7 @@ header .pc_menu ul {
   .about .contents .img1 {
     display: block;
     position: absolute;
-    top: -15vh;
+    top: -11vh;
     left: 10vw;
     width: 10%;
   }
@@ -292,7 +334,7 @@ header .pc_menu ul {
   .about .contents .img2 {
     display: block;
     position: absolute;
-    top: -15vh;
+    top: -11vh;
     right: 10vw;
     width: 10%;
   }
@@ -304,8 +346,8 @@ header .pc_menu ul {
   .about .contents .img3 {
     display: block;
     position: absolute;
-    top: 15vh;
-    right: -100px;
+    top: 10vh;
+    right: -15rem;
     width: 10%;
   }
 }
@@ -316,17 +358,18 @@ header .pc_menu ul {
   .about .contents .img4 {
     display: block;
     position: absolute;
-    top: 15vh;
-    left: -100px;
+    top: 10vh;
+    left: -15rem;
     width: 10%;
   }
 }
 
+/* ---------skill------------------*/
 @media screen and (min-width: 474px) {
   .skill .boxs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 5rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -335,7 +378,7 @@ header .pc_menu ul {
   }
 }
 .skill .boxs .box:nth-child(2) {
-  margin: 30px 0;
+  margin: 1rem 0;
 }
 @media screen and (min-width: 474px) {
   .skill .boxs .box:nth-child(2) {
@@ -344,7 +387,7 @@ header .pc_menu ul {
 }
 @media screen and (min-width: 474px) {
   .skill .boxs .box:nth-child(3) {
-    margin-top: 30px;
+    margin-top: 1rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -353,6 +396,7 @@ header .pc_menu ul {
   }
 }
 
+/* ----------works------------------- */
 .works {
   padding-top: 0;
 }
@@ -360,7 +404,7 @@ header .pc_menu ul {
   .works .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 5rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -372,33 +416,65 @@ header .pc_menu ul {
   width: 100%;
 }
 
+/* ------------フッター----------------- */
 footer {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
   background: var(--subcolor);
-  border-radius: 50px 50px 0 0;
   width: 100vw;
 }
 footer .contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5%;
+  padding: 3% 5%;
 }
 footer .contents .logo img {
-  max-width: 80px;
+  max-width: 10rem;
+}
+@media screen and (min-width: 700px) {
+  footer .contents .logo img {
+    max-width: 12rem;
+  }
 }
 @media screen and (min-width: 700px) {
   footer .nav ul {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
   }
 }
 footer .nav ul li {
   list-style: none;
 }
+@media screen and (min-width: 700px) {
+  footer .nav ul li {
+    font-size: 1.7rem;
+  }
+}
 footer .cp {
-  padding: 10px 0;
+  padding: 1rem 0;
   text-align: center;
+}
+
+/* --------トップに戻るボタン------------ */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #4d4d4d;
+  opacity: 0.6;
+  font-size: 1.6rem;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* マウスを乗せた時に透明度を変える */
+.back-to-top:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
