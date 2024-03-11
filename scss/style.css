@@ -50,14 +50,13 @@ section {
 
 h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 @media screen and (min-width: 700px) {
   h2 {
     font-size: 3.2rem;
-    margin-bottom: 3rem;
   }
 }
 h2:before {
@@ -78,15 +77,26 @@ h2:before {
 
 h3 {
   color: var(--txtcolor);
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
   display: inline-block;
   line-height: 1.3;
   background: var(--maincolor);
   vertical-align: middle;
   border-radius: 2rem;
+}
+@media screen and (min-width: 474px) {
+  h3 {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 700px) {
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 h3:before {
   content: "●";
@@ -146,7 +156,7 @@ header .contents {
   }
 }
 header .logo img {
-  max-width: 10rem;
+  max-width: 8rem;
   position: absolute;
   top: 50%;
   left: 0;
@@ -286,6 +296,10 @@ header .pc_menu ul {
     margin-top: 6rem;
   }
 }
+.about p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .about .contents {
   position: relative;
   max-width: 1200px;
@@ -375,9 +389,14 @@ header .pc_menu ul {
 .about .loop_wrap div {
   flex: 0 0 auto;
   white-space: nowrap;
-  font-size: 12rem;
+  font-size: 8rem;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.3);
+}
+@media screen and (min-width: 700px) {
+  .about .loop_wrap div {
+    font-size: 12rem;
+  }
 }
 .about .loop_wrap div:nth-child(odd) {
   -webkit-animation: loop 50s -25s linear infinite;
@@ -421,11 +440,19 @@ header .pc_menu ul {
 }
 
 /* ---------skill------------------*/
+.skill p {
+  text-align: center;
+}
+@media screen and (min-width: 474px) {
+  .skill p {
+    margin-bottom: 2rem;
+  }
+}
 @media screen and (min-width: 474px) {
   .skill .boxs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 2rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -456,11 +483,19 @@ header .pc_menu ul {
 .works {
   padding-top: 0;
 }
+.works p {
+  text-align: center;
+}
+@media screen and (min-width: 474px) {
+  .works p {
+    margin-bottom: 2rem;
+  }
+}
 @media screen and (min-width: 474px) {
   .works .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 2rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -486,7 +521,7 @@ footer .contents {
   padding: 3% 5%;
 }
 footer .contents .logo img {
-  max-width: 10rem;
+  max-width: 8rem;
 }
 @media screen and (min-width: 700px) {
   footer .contents .logo img {

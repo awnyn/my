@@ -56,12 +56,11 @@ section {
 }
 h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   @include tab {
     font-size: 3.2rem;
-    margin-bottom: 3rem;
   }
   &:before {
     content:"";
@@ -79,15 +78,22 @@ h2 {
 }
 h3 {
   color: var(--txtcolor);
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
   padding: 1rem;
-  margin-bottom: 2rem;;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
   display: inline-block;
   line-height: 1.3;
   background: var(--maincolor);
   vertical-align: middle;
   border-radius: 2rem;
+  @include mobile {
+    margin-top: 0;
+  }
+  @include tab{
+    font-size: 1.5rem;
+  }
   &:before{
     content: '●';
     color: white;
@@ -145,7 +151,7 @@ header {
     }
   }
   .logo img {
-    max-width: 10rem;
+    max-width: 8rem;
     position: absolute;
     top: 50%;
     left: 0;
@@ -281,6 +287,10 @@ header {
   @include tab {
     margin-top: 6rem;
   }
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
   .contents {
     position: relative;
     max-width: 1200px;
@@ -360,9 +370,12 @@ header {
   .loop_wrap div {
     flex: 0 0 auto;
     white-space: nowrap;
-    font-size: 12rem;
+    font-size: 8rem;
     overflow: hidden;
     color: rgba(255, 255, 255, 0.3);
+    @include tab{
+      font-size: 12rem;
+    }
   }
   .loop_wrap div:nth-child(odd) {
   animation: loop 50s -25s linear infinite;
@@ -390,11 +403,17 @@ header {
 
 /* ---------skill------------------*/
 .skill {
+  p {
+    text-align: center;
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
   .boxs {
     @include mobile {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 2rem;
     }
     @include tab{
       grid-template-columns: 1fr 1fr 1fr;
@@ -421,11 +440,17 @@ header {
 /* ----------works------------------- */
 .works {
   padding-top: 0;
+  p {
+    text-align: center;
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
   .grid {
     @include mobile{
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 2rem;
     }
     @include tab{
       grid-template-columns: 1fr 1fr 1fr 1fr; 
@@ -449,7 +474,7 @@ footer {
     padding: 3% 5%;
     .logo {
       img {
-        max-width: 10rem;
+        max-width: 8rem;
         @include tab {
           max-width: 12rem;;
         }
