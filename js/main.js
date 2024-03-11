@@ -62,44 +62,7 @@ $(function () {
     }
   });
 });
-//-----------------アバウトイラスト---------------
 
-$('.img1').waypoint({
-  handler(direction) {
-		if (direction === 'down') {
-      $(this.element).addClass('fadeInUp');
-      this.destroy();
-    }
-  },
-  offset: '50%',
-});
-$('.img2').waypoint({
-  handler(direction) {
-		if (direction === 'down') {
-      $(this.element).addClass('fadeInUp');
-      this.destroy();
-    }
-  },
-  offset: '50%',
-});
-$('.img3').waypoint({
-  handler(direction) {
-		if (direction === 'down') {
-      $(this.element).addClass('fadeInUp');
-      this.destroy();
-    }
-  },
-  offset: '50%',
-});
-$('.img4').waypoint({
-  handler(direction) {
-		if (direction === 'down') {
-      $(this.element).addClass('fadeInUp');
-      this.destroy();
-    }
-  },
-  offset: '50%',
-});
 // -----------------topまで戻るボタン-----------------
 
 const updateButton = () => {
